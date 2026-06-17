@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/counterModel.dart';
+import 'package:provider/provider.dart';
 
 import 'homePage.dart';
 import 'schoolPage.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => CounterModel(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -49,6 +56,7 @@ const tabs = <String>['Home', 'School'];
 
 class _MainNavigatorState extends State<MainNavigator> {
   int _currentSelectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
