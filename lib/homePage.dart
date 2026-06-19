@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
           body: Center(
             child: Text(
               '${counter.counter}',
-              style: const TextStyle(fontSize: 30),
+              style: const TextStyle(fontSize: 30, color: Colors.red),
             ),
           ),
         );
